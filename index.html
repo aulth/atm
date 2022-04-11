@@ -29,16 +29,15 @@
     <div id="lang-screen" class="bg-grad w-full h-screen flex justify-between items-center ">
         <div class="side-left text-white">
             <ul class="flex flex-col items-start">
-                <li onclick="goToHome('transaction-screen')" class="lg-screen-exit">Exit</li>
-                <li onclick="goToBack('lang-screen', 'home-screen')" class="lg-screen-exit">Back</li>
+                <li onclick="goToHome('transaction-screen')" class="lg-screen-exit exit">Exit</li>
+                <li onclick="goToBack('lang-screen', 'home-screen')" class="lg-screen-exit back"></li>
             </ul>
         </div>
         <div class="text-white side-right">
-            <p style="text-align: right;">Please use english as of now, more languages will be available soon</p>
             <ul class="flex items-end flex-col lg-list">
-                <li onclick="goToNext('lang-screen', 'transaction-screen')">English</li>
-                <li>Hindi</li>
-                <li>Marathi</li>
+                <li onclick="setLanguage('english');goToNext('lang-screen', 'transaction-screen')">English</li>
+                <li onclick="setLanguage('hindi');goToNext('lang-screen', 'transaction-screen')">Hindi</li>
+                <li onclick="setLanguage('urdu');goToNext('lang-screen', 'transaction-screen')">Urdu</li>
             </ul>
         </div>
     </div>
@@ -47,20 +46,20 @@
     <div id="transaction-screen" class="w-full bg-grad h-screen flex text-white">
         <div class="side-left flex flex-col justify-center">
             <ul class="flex flex-col items-start transaction-left">
-                <li onclick="goToHome('transaction-screen')">Exit</li>
-                <li onclick="goToBack('transaction-screen','lang-screen')">Back</li>
-                <li>Balance Enquiry</li>
-                <li>Mini Statement</li>
+                <li onclick="goToHome('transaction-screen')" class="exit"></li>
+                <li onclick="goToBack('transaction-screen','lang-screen')" class="back"></li>
+                <li id="b-e-btn"></li>
+                <li id="m-s-btn"></li>
             </ul>
         </div>
         <div class="side-right flex flex-col justify-center">
             <p style="text-align: right;">Only Fast cash, and cash withdrawl is avail, more srvcs will be available soon
             </p>
             <ul class="flex flex-col items-end transaction-right">
-                <li onclick="goToNext('transaction-screen', 'fast-cash-screen')">Fast Cash</li>
-                <li onclick="goToNext('transaction-screen', 'c-w-screen')">Cash Withdrawl</li>
-                <li>Pin Change</li>
-                <li>Funds Transfer</li>
+                <li onclick="goToNext('transaction-screen', 'fast-cash-screen')" id="fast-cash-btn"></li>
+                <li onclick="goToNext('transaction-screen', 'c-w-screen')"  id="c-w-btn"></li>
+                <li id="pin-change-btn"></li>
+                <li  id="f-t-btn"></li>
             </ul>
         </div>
     </div>
@@ -68,12 +67,12 @@
     <!-- fast cash screen -->
     <div id="fast-cash-screen"
         class="w-full h-screen text-white flex flex-col justify-center items-center fast-cash bg-grad">
-        <h2>Select the amount for your fast cash transaction</h2>
+        <h2 id="amount-select"></h2>
         <div class="w-full flex justify-between">
             <div class="side-left">
                 <ul class="flex flex-col items-start">
-                    <li onclick="goToHome('fast-cash-screen')">Exit</li>
-                    <li onclick="goToBack('fast-cash-screen', 'transaction-screen')">Back</li>
+                    <li onclick="goToHome('fast-cash-screen')" class="exit"></li>
+                    <li onclick="goToBack('fast-cash-screen', 'transaction-screen')" class="back"></li>
                     <li onclick="fastCash(2000)">2000</li>
                     <li onclick="fastCash(4000)">4000</li>
                 </ul>
@@ -91,14 +90,14 @@
     <!-- fast cash screen end  -->
     <!-- cash with drawl screen  -->
     <div id="c-w-screen" class="w-full bg-grad h-screen flex flex-col justify-center items-center c-w-screen">
-        <h2 class="text-white mb-1">Enter the amount</h2>
+        <h2 class="text-white mb-1" id="enter-amount"></h2>
         <input type="text" id="money" class="keyboard-screen" disabled>
         <div class="keyboard text-white flex flex-col justify-center items-center">
             <div class="keyboard-row flex justify-center items-center">
                 <div onclick="typeNumber('money', 1)" class="key">1</div>
                 <div onclick="typeNumber('money', 2)" class="key">2</div>
                 <div onclick="typeNumber('money', 3)" class="key">3</div>
-                <div onclick="deleteNumber('money')" class="key">Del</div>
+                <div onclick="deleteNumber('money')" class="key del">Del</div>
             </div>
             <div class="keyboard-row flex justify-center items-center">
                 <div onclick="typeNumber('money', 4)" class="key">4</div>
@@ -120,8 +119,8 @@
     <!-- cash withdrawl screen end  -->
     <!-- pin screen  -->
     <div id="pin-screen" class="w-full bg-grad h-screen flex flex-col justify-center items-center pin-screen">
-        <h2 class="text-white">Amount : <span id="amount"></span></h2>
-        <h2 class="text-white mb-1">Enter the PIN</h2>
+        <h2 class="text-white"><span id="view-amount"></span> : <span id="amount"></span></h2>
+        <h2 class="text-white mb-1" id="enter-pin"></h2>
         <input type="text" id="pin" class="keyboard-screen" disabled>
         <div class="keyboard text-white flex flex-col justify-center items-center">
             <div class="keyboard-row flex justify-center items-center">
@@ -150,8 +149,8 @@
     <!-- pin screen end  -->
     <!-- transaction is process screen  -->
     <div id="final-screen" class="w-full h-screen flex flex-col justify-center items-center text-white bg-grad">
-        <h2>Please wait...</h2>
-        <h2>Transaction is being processed</h2>
+        <h2 id="p-wait">Please wait...</h2>
+        <h2 id="t-processing">Transaction is being processed</h2>
         <h2 id="collect-cash" class="text-white"></h2>
     </div>
     <!-- audio -->
@@ -171,5 +170,8 @@
                 href="https://aulth.github.io/usman">Mohd Usman</a></p>
     </div>
 <script src="script.js"></script>
+<script>
+    
+</script>
 </body>
 </html>
