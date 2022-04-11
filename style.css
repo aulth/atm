@@ -1,0 +1,166 @@
+.bg-grad{
+    background-image: linear-gradient(153deg, rgba(74,74,74,1) 0%, rgba(15,11,11,1) 96%);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.w-full{
+    width: 100%;
+}
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.justify-center{
+    justify-content: center;
+}
+.items-center{
+    align-items: center;
+}
+.home-screen{
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    background-image: linear-gradient(153deg, rgba(74,74,74,1) 0%, rgba(15,11,11,1) 96%);
+}
+.insert-box{
+    width: 260px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+    box-sizing: border-box;
+}
+.insert-box::after{
+    content: ' ';
+    width: 256px;
+    height: 16px;
+    background-color: white;
+    position: absolute;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -2px -2px 5px rgba(0,0,0,0.5);
+}
+.atm-card
+{
+    border-bottom: 200px solid rgba(109, 129, 255, 1);
+    top: -10px;
+    position: relative;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    width: 130px;
+    border-radius: 10px;
+}
+.text-white{
+    color: white;
+}
+.text-center{
+    text-align: center;
+}
+.mb-1{
+    margin-bottom: 1rem;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.footer{
+    position: fixed;
+    bottom:0;
+}
+.relative{
+    position: relative;
+}
+.click-to-insert{
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid white;
+    width: 150px;
+    border-radius: 5px;
+    height: 40px;
+    color: rgba(109, 129, 255, 1);
+}
+.click-to-insert:hover{
+    background-color: rgba(109, 129, 255, 1);
+    color: rgba(15,11,11,1);
+}
+.h-screen{
+    height: 100vh;
+}
+.side-left{
+    width: 50%;
+}
+.side-right{
+    width: 50%;
+}
+.side-right li, .side-left li{
+    list-style: none;
+    padding: 10px 30px 10px 10px;
+    border: 1px solid white;
+    margin: 5px;
+    margin-right: 0px;
+    box-shadow: 0px 0px 5px rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+.side-left li{
+    margin-left: 0px;
+    padding: 10px 10px 10px 30px;
+}
+
+.side-left li:hover, .side-right li:hover{
+    background-color: rgba(109, 129, 255, 1);
+    color: rgba(15,11,11,1);
+}
+.items-end{
+    align-items: flex-end;
+    transition-duration: 1s;
+}
+#lang-screen, #transaction-screen,#fast-cash-screen, #c-w-screen, #pin-screen, #final-screen{
+    transition: all 0.3s ease-out;
+    left: -100%;
+    position: fixed;
+}
+.items-start{
+    align-items: flex-start;
+}
+.keyboard{
+    width: 400px;
+    height: 400px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.key{
+    width: 100px;
+    background-color: rgba(0,0,0,0.4);
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5), inset 5px 5px 10px rgba(255,255,255,0.5);
+}
+.key:active, .enter-key:active{
+    box-shadow: inset -5px -5px 10px rgba(255,255,255,0.5), inset 5px 5px 10px rgba(0,0,0,0.5);
+}
+.enter-key{
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5), inset 5px 5px 10px rgba(255,255,255,0.5);
+}
+.keyboard-screen{
+    width: 350px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+}
+.keyboard-screen:focus{
+    outline: none;
+}
