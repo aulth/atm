@@ -124,15 +124,15 @@
     align-items: flex-start;
 }
 .keyboard{
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 280px;
     font-size: 20px;
     cursor: pointer;
 }
 .key{
-    width: 100px;
+    width: 80px;
+    height: 80px;
     background-color: rgba(0,0,0,0.4);
-    height: 100px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -144,7 +144,7 @@
     box-shadow: inset -5px -5px 10px rgba(255,255,255,0.5), inset 5px 5px 10px rgba(0,0,0,0.5);
 }
 .enter-key{
-    width: 400px;
+    width: 320px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -153,7 +153,7 @@
     box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5), inset 5px 5px 10px rgba(255,255,255,0.5);
 }
 .keyboard-screen{
-    width: 350px;
+    width: 320px;
     box-sizing: border-box;
     padding: 10px;
     margin: 10px;
@@ -163,4 +163,21 @@
 }
 .keyboard-screen:focus{
     outline: none;
+}
+@media (min-width:568px){
+    .keyboard{
+        width: 400px;
+        height: 400px;
+        font-size: 20px;
+    }
+    .key{
+        width: 100px;
+        height: 100px;
+    }
+    .enter-key{
+        width:400px;
+    }
+    .keyboard-screen{
+        width: 350px;
+    }
 }
